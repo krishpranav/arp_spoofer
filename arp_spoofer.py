@@ -4,7 +4,8 @@ import scapy.all as scapy
 import time
 import sys
 
-
+target_ip = input("Enter Your Target Ip >>")
+gateway_ip = input("Enter Your Router Gateway Ip >> ")
 def get_mac(ip):
     arp_request = scapy.ARP(pdst=ip)
     broadcast = scapy.Ether(dst="ff:ff:ff:ff:ff:ff")
@@ -28,9 +29,6 @@ def restore(detination_ip, source_ip):
 
 
 sent_packets_count = 0
-
-target_ip = ""  # enter the target ip
-gateway_ip = ""  # enter the router ip
 
 try:
     while True:
